@@ -20,5 +20,33 @@
       <description>Hello</description>
     </item>
     
+    <item>
+      <title>Pinhole Camera</title>
+      <link>https://straend.github.io/camera/pinhole/</link>
+      <pubDate>Mon, 13 Jan 2020 19:29:08 +0200</pubDate>
+      
+      <guid>https://straend.github.io/camera/pinhole/</guid>
+      <description>Pinhole diameter  d = 2 * sqrt( F*λ )
+  F = focal length, distance from pinhole to paper/film d = diameter λ = wavelength of light 550nm is good for black and white optimally less than 1/100 of focal length vingetting when diameter is near the thickness of material  f-number  f-number = (distance to film/paper) / (pinhole diameter)
+ Exposure time measure with something lets say that we get 1/60 with f22</description>
+    </item>
+    
+    <item>
+      <title>Serial Pill</title>
+      <link>https://straend.github.io/electronics/serial-pill/</link>
+      <pubDate>Mon, 13 Jan 2020 18:56:03 +0200</pubDate>
+      
+      <guid>https://straend.github.io/electronics/serial-pill/</guid>
+      <description>pill_serial.bin compile pill_serial
+Changed baudrate to 230400 on all three serialports in usbuart.c
+and also CDCACM_PACKET_SIZE to 32 according to Issue 1
+more information from here: https://satoshinm.github.io/blog/171223_stm32serial_triple_usb-to-serial_adapter_using_stm32_blue_pill.html
+enable serial bootloader on STM32F10x
+boot0 = 1 boot1 = 0  and connect with a serial adapter
+tx = A10 rx = A9  then we need something to flash with, stm32loader is a good choice
+pip install pyserial stm32loader
+then we can flash our code, choose correct COM port</description>
+    </item>
+    
   </channel>
 </rss>

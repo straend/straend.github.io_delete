@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cameras on fik1</title>
+    <link>https://straend.github.io/camera/</link>
+    <description>Recent content in Cameras on fik1</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Jan 2020 19:29:08 +0200</lastBuildDate>
+    
+	<atom:link href="https://straend.github.io/camera/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pinhole Camera</title>
+      <link>https://straend.github.io/camera/pinhole/</link>
+      <pubDate>Mon, 13 Jan 2020 19:29:08 +0200</pubDate>
+      
+      <guid>https://straend.github.io/camera/pinhole/</guid>
+      <description>Pinhole diameter  d = 2 * sqrt( F*λ )
+  F = focal length, distance from pinhole to paper/film d = diameter λ = wavelength of light 550nm is good for black and white optimally less than 1/100 of focal length vingetting when diameter is near the thickness of material  f-number  f-number = (distance to film/paper) / (pinhole diameter)
+ Exposure time measure with something lets say that we get 1/60 with f22</description>
+    </item>
+    
+  </channel>
+</rss>

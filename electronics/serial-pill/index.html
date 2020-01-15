@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>First Post :: fik1</title>
+    <title>Serial Pill :: fik1</title>
 
     
     <link href="/css/nucleus.css?1579077809" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/posts/first-post/">
+  <body class="" data-url="/electronics/serial-pill/">
     <nav id="sidebar" class="">
 
 
@@ -92,7 +92,7 @@
   
     
     <li data-nav-id="/posts/" title="Posts" class="dd-item 
-        parent
+        
         
         
         ">
@@ -116,7 +116,7 @@
  
   
     
-      <li data-nav-id="/posts/first-post/" title="First Post" class="dd-item active">
+      <li data-nav-id="/posts/first-post/" title="First Post" class="dd-item ">
         <a href="/posts/first-post/">
         First Post
         
@@ -194,7 +194,7 @@
   
     
     <li data-nav-id="/electronics/" title="Electronics" class="dd-item 
-        
+        parent
         
         
         ">
@@ -218,7 +218,7 @@
  
   
     
-      <li data-nav-id="/electronics/serial-pill/" title="Serial Pill" class="dd-item ">
+      <li data-nav-id="/electronics/serial-pill/" title="Serial Pill" class="dd-item active">
         <a href="/electronics/serial-pill/">
         Serial Pill
         
@@ -287,7 +287,7 @@
             
           
           
-            <a href='/'>fik1</a> > <a href='/posts/'>Posts</a> > First Post
+            <a href='/'>fik1</a> > <a href='/electronics/'>Electronics</a> > Serial Pill
           
          
           
@@ -300,7 +300,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -316,7 +324,7 @@
           
             <h1>
               
-              First Post
+              Serial Pill
             </h1>
           
 
@@ -324,7 +332,91 @@
 
 
 
-<p>Hello</p>
+<h4 id="pill_serialbin">pill_serial.bin</h4>
+<p>compile  <a href="https://github.com/satoshinm/pill_serial">pill_serial</a></p>
+<p>Changed baudrate to <code>230400</code> on all three serialports in <a href="https://github.com/satoshinm/pill_serial/blob/master/src/usbuart.c#L63">usbuart.c</a></p>
+<p>and also <code>CDCACM_PACKET_SIZE</code> to <code>32</code> according to <a href="https://github.com/satoshinm/pill_serial/issues/1">Issue 1</a></p>
+<p>more information from here: <a href="https://satoshinm.github.io/blog/171223_stm32serial_triple_usb-to-serial_adapter_using_stm32_blue_pill.html">https://satoshinm.github.io/blog/171223_stm32serial_triple_usb-to-serial_adapter_using_stm32_blue_pill.html</a></p>
+<p>enable serial bootloader on STM32F10x</p>
+<pre><code>boot0 = 1
+boot1 = 0
+</code></pre>
+<p>and connect with a serial adapter</p>
+<pre><code>tx = A10
+rx = A9
+</code></pre>
+<p>then we need something to flash with, <a href="https://github.com/florisla/stm32loader">stm32loader</a> is a good choice</p>
+<p><code>pip install pyserial stm32loader</code></p>
+<p>then we can flash our code, choose correct COM port</p>
+<p><code>stm32loader -p COM6 -e -w -v src\pill_serial.bin</code></p>
+<table>
+<thead>
+<tr>
+<th>Serial</th>
+<th>TX</th>
+<th>RX</th>
+<th>SPEED</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>USART 3</td>
+<td>PB10</td>
+<td>PB11</td>
+<td>230400</td>
+</tr>
+<tr>
+<td>USART 2</td>
+<td>PA2</td>
+<td>PA3</td>
+<td>230400</td>
+</tr>
+<tr>
+<td>USART 1</td>
+<td>PA9</td>
+<td>PA10</td>
+<td>230400</td>
+</tr>
+</tbody>
+</table>
+<h5 id="serial-driver">Serial driver</h5>
+<p>With my usb serial adapter based on PL2303 some new driver would not load and just gace the error &ldquo;PL2303HXA PHASED OUT SINCE 2012. PLEASE CONTACT YOUR SUPPLIER.&rdquo; after some searching <a href="https://vk3tbs.home.blog/tag/pl2303hxa-phased-out-since-2012/">https://vk3tbs.home.blog/tag/pl2303hxa-phased-out-since-2012/</a> came up with a solution. After some links You can find a driver on the bottom of this page <a href="https://grylewicz.pl/kabel-usb-rs232-prolific-pl2303-i-blad-kod-10/">https://grylewicz.pl/kabel-usb-rs232-prolific-pl2303-i-blad-kod-10/</a></p>
+
+<section class="attachments ">
+	<label>
+		<i class="fas fa-paperclip" aria-hidden="true"></i>
+		Backed up files
+	</label>
+	
+		
+	
+	<div class="attachments-files">
+	
+		
+		
+			<li>
+				<a href="/electronics/serial-pill.files/IO-Cable_PL-2303_Drivers-Generic_Windows_PL2303_Prolific.zip" >
+					IO-Cable_PL-2303_Drivers-Generic_Windows_PL2303_Prolific.zip
+				</a>
+				(2209 ko)
+			</li>
+		
+	
+		
+		
+			<li>
+				<a href="/electronics/serial-pill.files/pill_serial.bin" >
+					pill_serial.bin
+				</a>
+				(8 ko)
+			</li>
+		
+	
+	<div>
+	
+</section>
+
+
 
 
 <footer class=" footline" >
@@ -363,40 +455,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -444,6 +502,40 @@
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -468,10 +560,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/posts/" title="Posts"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/electronics/" title="Electronics"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/camera/" title="Cameras" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/posts/" title="Posts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
