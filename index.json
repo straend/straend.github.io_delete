@@ -1,0 +1,64 @@
+[
+{
+	"uri": "https://straend.github.io/",
+	"title": "fik1",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://straend.github.io/posts/first-post/",
+	"title": "First Post",
+	"tags": [],
+	"description": "",
+	"content": "Hello\n"
+},
+{
+	"uri": "https://straend.github.io/posts/",
+	"title": "Posts",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://straend.github.io/camera/",
+	"title": "Cameras",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://straend.github.io/camera/pinhole/",
+	"title": "Pinhole Camera",
+	"tags": [],
+	"description": "",
+	"content": "Pinhole diameter  d = 2 * sqrt( F*λ )\n  F = focal length, distance from pinhole to paper/film d = diameter λ = wavelength of light 550nm is good for black and white optimally less than 1/100 of focal length vingetting when diameter is near the thickness of material  f-number  f-number = (distance to film/paper) / (pinhole diameter)\n Exposure time measure with something lets say that we get 1/60 with f22\nlet's calculate with pihole f-number 100\n light sensitivity change = (target f / measured f)² ex (100/22)² = 20.66  exposure time is then 1/60 * 20.66 = 0.344 seconds\nbut remember we probably can't measure with as low ISO as the paper\nwhich probably is between 2 and 10, so we have to count the steps and adjust accordingly\n   ISO   speeds       3 6 12 25 50 100   200 400 800 1600 3200 6400    Reciprocity At least with ILFORD papers, there is minimal need for longer exposure due to reciprocitation\nILFORD Paper FAQ\n For our papers - provided the exposures are within say a couple of hours, there is no real adjustment you'd need to make to whatever your initial metered reading is telling you to expose to.\n https://github.com/ehagan/pinhole-camera-exposure-time\n35mm equivalent focal length Diagonal of \u0026lsquo;normal\u0026rsquo; 35mm film is 43.3mm, 36mm wide and 24mm tall\n   image size diagonal width     4:3 width 34.6 f/w 36 f/w   4:3 diagonal 43.3 f/d 45 f/d   3:2 width 36 f/w 36 f/w   3:2 diagonal 43.3 f/d 43.3 f/d   (Table from Wikipedia)      For a 5x7 paper (diagonal 218.7mm) and a true focal length of 100mm we'll get the following\n43.3 100/218.7 = 19.8\nor with a 4x6 paper diagonal (127.6mm)\n43.3 100/127.6 = 33\nSources  Wikipedia ILFORD MULTIGRADE RC ILFORD MULTIGRADE FB CLASSIC    ILFORD Technical data   Black and White Developers.pdf  (177 ko)   Contrast Control.pdf  (283 ko)   MG4RC_vs_MGRC.pdf  (155 ko)   MULTIGRADE_FB_CLASSIC.pdf  (51 ko)   MULTIGRADE_RC.pdf  (274 ko)   Processing.pdf  (163 ko)    "
+},
+{
+	"uri": "https://straend.github.io/electronics/",
+	"title": "Electronics",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://straend.github.io/electronics/serial-pill/",
+	"title": "Serial Pill",
+	"tags": [],
+	"description": "",
+	"content": "pill_serial.bin compile pill_serial\nChanged baudrate to 230400 on all three serialports in usbuart.c\nand also CDCACM_PACKET_SIZE to 32 according to Issue 1\nmore information from here: https://satoshinm.github.io/blog/171223_stm32serial_triple_usb-to-serial_adapter_using_stm32_blue_pill.html\nenable serial bootloader on STM32F10x\nboot0 = 1 boot1 = 0  and connect with a serial adapter\ntx = A10 rx = A9  then we need something to flash with, stm32loader is a good choice\npip install pyserial stm32loader\nthen we can flash our code, choose correct COM port\nstm32loader -p COM6 -e -w -v src\\pill_serial.bin\n   Serial TX RX SPEED     USART 3 PB10 PB11 230400   USART 2 PA2 PA3 230400   USART 1 PA9 PA10 230400    Serial driver With my usb serial adapter based on PL2303 some new driver would not load and just gace the error \u0026ldquo;PL2303HXA PHASED OUT SINCE 2012. PLEASE CONTACT YOUR SUPPLIER.\u0026rdquo; after some searching https://vk3tbs.home.blog/tag/pl2303hxa-phased-out-since-2012/ came up with a solution. After some links You can find a driver on the bottom of this page https://grylewicz.pl/kabel-usb-rs232-prolific-pl2303-i-blad-kod-10/\n  Backed up files   IO-Cable_PL-2303_Drivers-Generic_Windows_PL2303_Prolific.zip  (2209 ko)   pill_serial.bin  (8 ko)    "
+},
+{
+	"uri": "https://straend.github.io/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://straend.github.io/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
